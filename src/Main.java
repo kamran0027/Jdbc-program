@@ -26,12 +26,20 @@ public class Main {
             //building the connection to the database
           Connection con= DriverManager.getConnection(url,user,password);
             System.out.println("connection stablish successfully");
-
             //making statement
             Statement stmt=con.createStatement();
 
+
             //storing the fetch values from database to the resultset
             ResultSet rs=stmt.executeQuery(query);
+//            int rowsAffeceted=stmt.executeUpdate(Operation.insrt);
+//            if (rowsAffeceted>0){
+//                System.out.println("insert successefully");
+//            }
+//            else {
+//                System.out.println("insert failed");
+//            }
+
             while (rs.next()){
                 int id=rs.getInt("id");
                 String name=rs.getString("name");
